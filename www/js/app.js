@@ -5,6 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', [
     'ionic',
+
+    'btford.socket-io',
+    'angularMoment',
+
     'services.socket',
     'controllers.home'
 ]);

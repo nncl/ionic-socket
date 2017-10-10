@@ -1,7 +1,9 @@
 var app = angular.module('services.socket', []);
 
-app.service('SocketService', function () {
-    var self;
+app.service('SocketService', ['socketFactory', SocketService]);
 
-    return self;
-});
+function SocketService(socketFactory) {
+    return socketFactory({
+        ioSocket: io.connect('http://localhost:3000')
+    });
+}
